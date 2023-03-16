@@ -29,7 +29,7 @@ const AddPotForm = () => {
     setUserId("");
   }
 
-  const canSave = Boolean(title) && Boolean(content) && Boolean(userId);
+  const canSave = Boolean(title) && Boolean(content) ;
 
   const userOptions = users.map(user =>{
     return(
