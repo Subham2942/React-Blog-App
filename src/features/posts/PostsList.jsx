@@ -12,7 +12,7 @@ const PostsList = () => {
     const renderedPosts = orderedPosts.map(post =>(
         <article key={post.id}>
             <h3>{post.title}</h3>
-            <p>{post.content.substring(0,100)}</p>
+            <p>{post.content.substring(0,101)}</p>
 
             <p className="postCredit">
               <PostAuthor userId={post.userId}/>
