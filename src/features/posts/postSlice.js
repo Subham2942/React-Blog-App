@@ -1,5 +1,6 @@
 import { createSlice, nanoid, createAsyncThunk } from "@reduxjs/toolkit";
 import { sub } from "date-fns";
+import axios from "axios";
 
 const POSTS_URL = 'https://jsonplaceholder.typicode.com/posts';
 
@@ -10,10 +11,8 @@ const initialState ={
 }
 
 export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () =>{
-    const response = await fetch(POSTS_URL);
-
-    const data = await response.json();
-    return data;
+    const response = await axios.get(POSTS_URL);
+    return response.data;
 })
 
 
