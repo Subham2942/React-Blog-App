@@ -30,7 +30,6 @@ const PostsList = () => {
 
   return (
     <section>
-        <h1>Posts</h1>
         {content}
     </section>
   )
