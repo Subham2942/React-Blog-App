@@ -31,7 +31,7 @@ const EditPostForm = () =>{
     const onContentChanged = e =>setContent(e.target.value);
     const onAuthorChanged =e => setUserId(e.target.value);
 
-    const canSave = [title, content, userId].every(Boolean) && requestStatus === "idle";
+    const canSave = [title, content].every(Boolean) && requestStatus === "idle";
 
     const onSavePostClicked = () =>{
         if(canSave){
