@@ -15,7 +15,7 @@ const EditPostForm = () =>{
     const [title, setTitle] = useState(post?.title);
     const [content, setContent] = useState(post?.body);
     const [userId, setUserId] = useState(post?.userId);
-    const [requestStatus, setrequestStatus] = useState('idle');
+    const [requestStatus, setRequestStatus] = useState('idle');
 
     const dispatch = useDispatch();
 
@@ -36,7 +36,7 @@ const EditPostForm = () =>{
     const onSavePostClicked = () =>{
         if(canSave){
             try{
-                setrequestStatus("pending");
+                setRequestStatus("pending");
                 dispatch(updatePost({id: post.id, title, body:content, userId, reactions: post.reactions})).unwrap();
                 setTitle('');
                 setContent('');
@@ -45,7 +45,7 @@ const EditPostForm = () =>{
             }catch(err){
                 console.log(err);
             }finally{
-                setrequestStatus('idle');
+                setRequestStatus('idle');
             }
         }
     }
@@ -58,8 +58,8 @@ const EditPostForm = () =>{
 
     const onDeletePostClicked = () =>{
         try{
-            setrequestStatus("pending");
-            dispatch(deletePost({id: post.ids})).unwrap();
+            setRequestStatus("pending");
+            dispatch(deletePost({id: post.id})).unwrap();
             setTitle('');
             setContent('');
             setUserId('');
@@ -67,9 +67,10 @@ const EditPostForm = () =>{
         }catch(err){
             console.log(err);
         }finally{
-            setrequestStatus('idle');
+            setRequestStatus('idle');
         }
-}
+    }
+
 
     return (
         <section>
