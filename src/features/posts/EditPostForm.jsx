@@ -87,9 +87,8 @@ const EditPostForm = () =>{
                 <label htmlFor="postAuthor">Author:</label>
                 <select name="postAuthor" defaultValue={userId} id="postAuthor" value={userId} onChange={onAuthorChanged}>
                 <option value="">
-                   {userOptions}
                 </option>
-                
+                {userOptions}
                 </select>
                 <label htmlFor="postContent">Content</label>
                 <textarea 
