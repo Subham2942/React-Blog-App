@@ -10,7 +10,7 @@ const Header = () => {
     
     return (
         <header className="Header">
-            <h1>Blog App</h1>
+            <Link to="/"><h1> Blog App </h1></Link>
             <nav>
                 <ul>
                     <li> <Link to="/">Home</Link> </li>
